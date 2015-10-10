@@ -1,18 +1,11 @@
 class TodosController < ApplicationController
 
-
-
-
   def index
   end
-
-
 
   def new
   	@todo = Todo.new
   end
-
-
 
   def create
   	@todo = Todo.new(post_params)
@@ -27,15 +20,9 @@ class TodosController < ApplicationController
   	@todos = current_user.todos.all
   end
 
-  
-
-
   private
   def post_params
   	params.require(:todo).permit(:title, :description, :status) #description = reason of failure
   end
-
-
-
 
 end

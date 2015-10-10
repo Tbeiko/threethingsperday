@@ -1,5 +1,11 @@
-<h1>It works</h1>
-<%= bootstrap_form_for(@todo) do |f| %>
-  <%= f.text_field :title %>
-  <%= f.submit "Create" %>
-<% end %>
+<div class="container">
+	<h1>Choose a Task</h1>
+
+	<%= bootstrap_form_for(@todo) do |f| %>
+  		<%= f.text_field :title %>
+  		<%= f.submit "Create" %>
+	<% end %>
+
+	<%= render "todo_card" %>
+
+</div>
