@@ -15,16 +15,16 @@ ActiveRecord::Schema.define(version: 20151010200521) do
 
   create_table "static_pages", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "todos", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
     t.string   "status"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "user_id"
   end
 
@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 20151010200521) do
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end
