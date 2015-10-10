@@ -1,4 +1,6 @@
 class TodosController < ApplicationController
+  before_action :set_user
+
   def index
   end
 
@@ -9,7 +11,8 @@ class TodosController < ApplicationController
   def create
   	@todo = Todo.new(post_params)
   	if @todo.save
-  		redirect_to 'todo/show'
+      @user.todos << @todo
+  		redirect_to user_path(current_user)
   	else
   	render :new
   	end
@@ -24,4 +27,7 @@ class TodosController < ApplicationController
   	params.require(:todo).permit(:title, :description, :status) #description = reason of failure
   end
 
+  def set_user
+    @user = current_user
+  end
 end

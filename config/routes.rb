@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'static_pages#home'
+  root to: 'sessions#new'
   resources :todos, :users
 
   get '/sign_in', to: 'sessions#new'
