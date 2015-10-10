@@ -1,3 +1,15 @@
-<h1 class="pull-left">This is the home page</h1>
+<div class='container'>
+  <div>
+  <h1>This is the home page</h1> 
+  </div>
 
-<% render '/
+  <div>
+  <h3> 
+    <%= link_to "Create an account", new_user_path %> 
+  </h3>
+
+  <h3>
+    <%= link_to "Sign in", sign_in_path %>
+  </h3>
+  </div/>
+</div>
