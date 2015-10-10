@@ -3,25 +3,25 @@ class TodosController < ApplicationController
   end
 
   def new
-  	@post = Todo.new
+  	@todo = Todo.new
   end
 
   def create
-  	@post = Todo.new(post_params)
-  	if @post.save
-  		redirect_to 'post/show'
+  	@todo = Todo.new(post_params)
+  	if @todo.save
+  		redirect_to 'todo/show'
   	else
   	render :new
   	end
   end
 
   def show
-  	@posts = current_user.posts.all
+  	@todos = current_user.todos.all
   end
 
   private
   def post_params
-  	params.require(:post).permit(:title, :description, :status) #description = failure description
+  	params.require(:todo).permit(:title, :description, :status) #description = reason of failure
   end
 
 end
