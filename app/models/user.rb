@@ -12,5 +12,4 @@ class User < ActiveRecord::Base
     end
     @todays_todos
   end
-
 end

@@ -19,6 +19,14 @@ class TodosController < ApplicationController
   	end
   end
 
+  def edit
+    @todo = Todo.find(params[:id])
+    @todo.update_attributes!(status: params[:status])
+    if @todo.status == "completed" || @todo.status == "failed"
+    end
+    redirect_to user_path(current_user)
+  end
+
   def show
   	@todos = current_user.todos.all
   end

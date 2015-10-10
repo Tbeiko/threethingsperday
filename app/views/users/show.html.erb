@@ -1,15 +1,17 @@
 <div class='container'>
-  <h1>Hi <%= current_user.name %> </h1>
+  <h1 class='black'>Hi <%= current_user.name %> </h1>
 
-  <p><%= link_to "Sign Out", sign_out_path %></p>
+  <!--  unless current_user.todays_todos >= 3  -->
+    <p><%= link_to "Create a new todo", new_todo_path, class: 'black' %></p>
+  <!-- end -->
 
-  <% unless current_user.todays_todos >= 3 %>
-  <p><%= link_to "Create a new todo", new_todo_path %></p>
-  <% end %>
+  <p class='black'><%= link_to "Sign Out", sign_out_path, class: 'black' %></p>
+
+
 
   <% current_user.todos.each do |todo| %>
-    <% if todo.created_today? %>
-      <p><%= todo.title %></p>
+    <% if todo.created_today? && (todo.status == nil) %>
+      <p><%= render 'todos/todo_card', todo: todo %></p>
     <% end %>
   <% end %>
 </div>

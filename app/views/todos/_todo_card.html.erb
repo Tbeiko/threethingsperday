@@ -1,10 +1,19 @@
 <div class="container">
 
-	<p style="padding: 10px; border: grey 1px solid; margin: 25px">Task</p>
-
+	<div style="padding: 10px; border: grey 1px solid; margin: 25px">
+  
+  <p></p>
+  <%= todo.title %>
+  </p>
+  
 	Completed?
-	<button type="button" class="btn btn-default">Yes</button>
-	<button type="button" class="btn btn-default">No</button>
+	<button type="button" class="btn btn-default">
+    <%= link_to "Yes", edit_todo_path(todo, status: "completed"), class: "black" %>
+  </button>
 
+	<button type="button" class="btn btn-default">
+    <%= link_to "No", edit_todo_path(todo, status: "failed"), class: "black" %>
+  </button>
+  </div>
 </div>
 

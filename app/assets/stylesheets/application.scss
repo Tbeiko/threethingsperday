@@ -27,16 +27,13 @@ html {
   background-color: #606060;
 }
 
-
-
- body {
+body {
   position: absolute;
   top: 70%;
   left: 0;
   width: 100%;
   margin-top: -200px;
-  overflow: hidden;
-  
+  overflow: scroll;
 }
 
 h1 {
@@ -45,7 +42,6 @@ h1 {
   color:white;
   margin: 0;
 }
-
 
 .wrapper {
   position: absolute;
@@ -56,15 +52,16 @@ h1 {
   margin-top: -200px;
   overflow: hidden;
 }
+
 .wrapper.form-success .container h1 {
   -webkit-transform: translateY(85px);
       -ms-transform: translateY(85px);
           transform: translateY(85px);
 }
+
 .container {
   max-width: 600px;
   margin: 0 auto;
-  padding: 80px 0;
   height: 400px;
   text-align: center;
 }
@@ -78,6 +75,7 @@ h1 {
           transition-timing-function: ease-in-put;
   font-weight: 200;
 }
+
 form {
   padding: 20px 0;
   position: relative;
@@ -90,6 +88,7 @@ a {
   z-index: 2;
 
 }
+
 .form-for-boostrap {
 	padding: 20px 0;
   position: relative;
@@ -272,4 +271,15 @@ form button:hover {
     -webkit-transform: translateY(-700px) rotate(600deg);
             transform: translateY(-700px) rotate(600deg);
   }
+}
+
+
+/*******Tim's code******/ 
+
+.black {
+  color: black;
+}
+
+.main {
+  height: 100%;
 }
