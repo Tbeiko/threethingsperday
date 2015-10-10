@@ -3,9 +3,13 @@
 
   <p><%= link_to "Sign Out", sign_out_path %></p>
 
+  <% unless current_user.todays_todos >= 3 %>
   <p><%= link_to "Create a new todo", new_todo_path %></p>
+  <% end %>
 
   <% current_user.todos.each do |todo| %>
-    <p><%= todo.title %></p>
+    <% if todo.created_today? %>
+      <p><%= todo.title %></p>
+    <% end %>
   <% end %>
 </div>
