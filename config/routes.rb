@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   root to: 'static_pages#home'
 
-  resources :posts, :users
+  resources :todos, :users
 end

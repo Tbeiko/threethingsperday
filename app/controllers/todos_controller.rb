@@ -1,4 +1,4 @@
-class PostsController < ApplicationController
+class TodosController < ApplicationController
 
 
 
@@ -9,13 +9,13 @@ class PostsController < ApplicationController
 
 
   def new
-  	@post = Post.new
+  	@post = Todo.new
   end
 
 
 
   def create
-  	@post = Post.new(post_params)
+  	@post = Todo.new(post_params)
   	if @post.save
   		redirect_to 'post/show'
   	else
