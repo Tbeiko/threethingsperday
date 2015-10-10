@@ -1,23 +1,22 @@
 class SessionsController < ApplicationController
 
   def new
+    redirect_to root_path if current_user
   end
 
   def create
-    auth_creds = request.env["omniauth.auth"]
-    auth_creds = env["omniauth.auth"] unless env["omniauth.auth"].nil?
-    user = User.from_omniauth(auth_creds)
-    session[:user_id] = user.id
-    if user
-      redirect_to user_path(current_user)
-    else 
-      redirect_to :back
+    user = User.where(email: params[:email]).first
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      redirect_to home_path
+    else
+      redirect_to sign_in_path
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_url
+    redirect_to 'sessions#new'
   end
 
 end
