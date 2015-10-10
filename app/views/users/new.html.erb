@@ -1,12 +1,28 @@
+<div class="wrapper">
+	<div class='container'>
 
-<div class='container' >
-<h1>Create an account</h1>
+		<h1>Create an account</h1>
 
-<%= bootstrap_form_for(@user) do |f| %>
-  <%= f.text_field :name %>
-  <%= f.email_field :email %>
-  <%= f.password_field :password %>
-  <%= f.submit "Create" %>
-<% end %>
-
+			<div class="form-for-boostrap">
+				<%= bootstrap_form_for(@user) do |f| %>
+				  <%= f.text_field :name, class: "test" %>
+				  <%= f.email_field :email, class: "test" %>
+				  <%= f.password_field :password, class: "test" %>
+				  <%= f.submit "Create"%>
+				  <% end %>
+			</div>
+	</div>
+	<ul class="bg-bubbles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
 </div>
