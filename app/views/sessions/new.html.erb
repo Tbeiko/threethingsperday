@@ -1,9 +1,11 @@
 <div class="wrapper">
 	<div class="container">
 		
-		<h1>Welcome</h1>
+		<h1 class='main-header'>Welcome back!</h1>
+		<h5 class='white'>Keep track of the three things you need to do today.</h5>
+		<h5 class='white'>And why you didn't do them.</h5>
 
-			<div class="form-for-boostrap">
+			<div class="form-for-boostrap white home-page-form">
 				<%= bootstrap_form_tag url: '/sign_in' do |f| %>
  				<%= f.email_field :email, class: "test"%>
  				<%= f.password_field :password, class: "test" %>
@@ -12,20 +14,19 @@
 			</div>
 
 			<%= link_to "Create an acccount", new_user_path %>
-
-	</div>
 	
-	<ul class="bg-bubbles">
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-	</ul>
+		<ul class="bg-bubbles">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+		</ul>
+	</div>
 </div>

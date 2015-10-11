@@ -1,19 +1,15 @@
-<div class="container">
+<div class='todo-card <%= card_color(todo) %>'>
 
-	<div style="padding: 10px; border: grey 1px solid; margin: 25px">
-  
-  <p></p>
+  <h2>
   <%= todo.title %>
-  </p>
-  
-	Completed?
-	<button type="button" class="btn btn-default">
+  </h2>
+
+  Completed?
+  <button type="button" class="btn btn-default">
     <%= link_to "Yes", edit_todo_path(todo, status: "completed"), class: "black" %>
   </button>
 
-	<button type="button" class="btn btn-default">
+  <button type="button" class="btn btn-default">
     <%= link_to "No", edit_todo_path(todo, status: "failed"), class: "black" %>
   </button>
-  </div>
 </div>
-

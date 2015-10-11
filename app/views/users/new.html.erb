@@ -1,9 +1,11 @@
 <div class="wrapper">
-	<div class='container main'>
+	<div class="container">
+		
+		<h1 class='main-header'>Create an account</h1>
+		<h5 class='white'>Keep track of the three things you need to do today.</h5>
+		<h5 class='white'>And why you didn't do them.</h5>
 
-		<h1>Create an account</h1>
-
-			<div class="form-for-boostrap">
+			<div class="form-for-boostrap white home-page-form">
 				<%= bootstrap_form_for(@user) do |f| %>
 				  <%= f.text_field :name, class: "test" %>
 				  <%= f.email_field :email, class: "test" %>
@@ -11,18 +13,21 @@
 				  <%= f.submit "Create"%>
 				  <% end %>
 			</div>
+
+			<%= link_to "Already have one? Log in", sign_in_path %>
+
+		<ul class="bg-bubbles">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+		</ul>
 	</div>
-	<ul class="bg-bubbles">
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-	</ul>
 </div>
