@@ -27,6 +27,12 @@ class TodosController < ApplicationController
     redirect_to user_path(current_user)
   end
 
+  def update
+    @todo = Todo.find(params[:id])
+    @todo.update_attributes!(description: params[:todo][:description])
+    redirect_to user_path(current_user)
+  end
+
   def show
   	@todos = current_user.todos.all
   end

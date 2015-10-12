@@ -1,13 +1,13 @@
 <div class='container'>
 
-  <h1 class='main-header black'>Hi <%= current_user.name %> </h1>
-
   <ul class='list-inline'>
-  <!--  unless current_user.todays_todos >= 3  -->
-  <li><%= link_to "Create a new todo", new_todo_path, class: 'black' %></li>
-  <!-- end -->
-  <li class='black'><%= link_to "Sign Out", sign_out_path, class: 'black' %></li>
+  <li> <h1 class='main-header text-center black'>Hi <%= current_user.name %> </h1> </li>
+  <li> <h5 class='pull-right black sign-out'><%= link_to "Sign Out", sign_out_path, class: 'black' %></h5> </li>
   </ul>
+
+  <h3>You still have 3 goals to add for today. </br>
+    <%= link_to "Add one now", new_todo_path %>
+  </h3>
 
   <% current_user.todos.each do |todo| %>
     <% if todo.created_today? # && (todo.status == nil) %>

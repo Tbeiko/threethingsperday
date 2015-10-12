@@ -2,12 +2,26 @@
 
   <h2><%= todo.title %></h2>
 
-  Completed?
-  <button type="button" class="btn btn-default">
-    <%= link_to "Yes", edit_todo_path(todo, status: "completed"), class: "black" %>
-  </button>
+  <% if todo.status.blank? %>
+    Completed?
+    <button type="button" class="btn btn-default">
+      <%= link_to "Yes", edit_todo_path(todo, status: "completed"), class: "black" %>
+    </button>
 
-  <button type="button" class="btn btn-default">
-    <%= link_to "No", edit_todo_path(todo, status: "failed"), class: "black" %>
-  </button>
+    <button type="button" class="btn btn-default">
+      <%= link_to "No", edit_todo_path(todo, status: "failed"), class: "black" %>
+    </button>
+
+  <% elsif todo.description != nil %>
+    <h5> Reason: <%= todo.description %></h5>
+  <% end %>
+
+  <% if (todo.status == "failed") && todo.description.blank? %>
+      <h5>Why didn't you do this?</h5>
+      <%= bootstrap_form_for(todo) do |f| %>
+        <%= f.text_field :description %>
+        <%= f.submit "Add reason" %>
+      <% end %>
+  <% end %>
+
 </div>
