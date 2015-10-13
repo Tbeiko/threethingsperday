@@ -5,12 +5,14 @@
   <li> <h5 class='pull-right black sign-out'><%= link_to "Sign Out", sign_out_path, class: 'black' %></h5> </li>
   </ul>
 
+
+  <!--  The three needs to be dynamic, depending on how many todos the person has left -->
   <h3>You still have 3 goals to add for today. </br>
     <%= link_to "Add one now", new_todo_path %>
   </h3>
 
   <% current_user.todos.each do |todo| %>
-    <% if todo.created_today? # && (todo.status == nil) %>
+    <% if todo.created_today? %>
       <p><%= render 'todos/todo_card', todo: todo %></p>
     <% end %>
   <% end %>

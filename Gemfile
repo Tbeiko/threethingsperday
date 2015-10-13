@@ -30,6 +30,7 @@ gem 'pry'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'whenever', :require => false
 # Use Unicorn as the app server
 # gem 'unicorn'
 

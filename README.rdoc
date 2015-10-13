@@ -1,3 +1,10 @@
 == README
 
 This was coded during HackConcordia. In less than a day. Please don't mind it.
+
+13-10-15
+Philippe - for the methods, see my comments in todo.rb & user.rb, they're kind of started but you can make sure they're working properly implemented in the live app.
+
+Also, be sure to run 'bundle install' & 'rake db:migrate' before trying to modify things.
+Then you can run the app with 'rails -s'
+

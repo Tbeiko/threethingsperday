@@ -7,6 +7,7 @@ class Todo < ActiveRecord::Base
     self.updated_at = Time.now
   end
 
+  # This returns true or false depending on if the todos is created today.
   def created_today?
     self.created_at.today?
   end
